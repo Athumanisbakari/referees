@@ -1,0 +1,7 @@
+config/local.php
+uploads/videos/*
+uploads/documents/*
+uploads/avatars/*
+!uploads/videos/.gitkeep
+!uploads/documents/.gitkeep
+!uploads/avatars/.gitkeep

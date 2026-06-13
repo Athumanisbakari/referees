@@ -1,0 +1,19 @@
+# Prevent directory listing
+Options -Indexes
+
+# Block direct web access to sensitive files
+<FilesMatch "\.(sql|md|example\.php)$">
+    Require all denied
+</FilesMatch>
+
+# Uncomment on live hosting after SSL is enabled:
+# RewriteEngine On
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Upload limits for local XAMPP (many free hosts ignore php_value)
+<IfModule mod_php.c>
+    php_value upload_max_filesize 64M
+    php_value post_max_size 64M
+    php_value max_execution_time 300
+</IfModule>
